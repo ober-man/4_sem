@@ -29,10 +29,8 @@ Matrix::~Matrix()
 
 double Matrix::determinant() const
 {
-    return this->elems[0] * this->elems[3] - this->elems[1] * this->elems[2];
+    return elems[0] * elems[3] - elems[1] * elems[2];
 }
-
-#include"matrix.h"
 
 Matrix operator + (const Matrix &m1, const Matrix &m2)
 {
@@ -106,10 +104,10 @@ Matrix operator ++ (Matrix &m, int)
 }
 
 // prefix - return reference to transformed version
-Matrix& operator ++(Matrix &m)
+Matrix& operator ++ (Matrix &m)
 {
     for(int i = 0; i < 4; ++i)
-        m.elems[i]++;
+        ++m.elems[i];
     return m;
 }
 
@@ -126,7 +124,7 @@ Matrix operator -- (Matrix &m, int)
 Matrix& operator -- (Matrix &m)
 {
     for(int i = 0; i < 4; ++i)
-        m.elems[i]--;
+        --m.elems[i];
     return m;
 }
 
