@@ -93,7 +93,7 @@ Matrix operator + (const Matrix &m)
 
 Matrix operator - (const Matrix &m)
 {
-    return Matrix{m.elems[0], m.elems[1], m.elems[2], m.elems[3]};
+    return Matrix{-m.elems};
 }
 
 // postfix - return old version
